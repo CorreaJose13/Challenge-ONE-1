@@ -6,7 +6,7 @@ const regex = /[A-Z]/; // solo minusculas
 const regex2 = /[\u00E0-\u00FC]/; //vocales sin acentos
 const keys = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]]; // codigos para encriptar vocales
 
-btncopy.style.visibility= "hidden";
+btncopy.style.visibility= "visible";
 
 function validateText(){
     let txtValue = document.querySelector(".input").value;
@@ -47,7 +47,7 @@ function copyText(){
     navigator.clipboard.writeText(txtoutput.value)
     txtinput.value = "";
     txtoutput.value = "";
-    container.style.backgroundImage= "url('Muñeco.png')";
+    container.style.backgroundImage= "url('./src/Muñeco.png')";
 }
 
 function Encrypt(txt){
@@ -73,6 +73,7 @@ document.addEventListener('keyup', function(event) {
     if (key === "Delete" || key === "Backspace") {
         if (txtoutput.value == ""){
             container.style.backgroundImage= "url('Muñeco.png')";
+            container.style.backgroundImage= "url('./src/Muñeco.png')";
         }
     }
 });

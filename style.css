@@ -1,100 +1,102 @@
-*{
-    background:#F3F5FC;
+* {
+    background: #F3F5FC;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 32px;
-    line-height: 150%;
 }
 
-body{
+main {
     display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
 }
 
-.logo{
-    margin-top: 32px;
-    margin-left: 32px;
+.logo {
+    width: 120px;
+    height: 48px;
+    margin-top: 40px;
 }
 
-main{
+.input-container{
     display: flex;
     flex-direction: column;
 }
 
-.input{
-    height: 683px;
-    width: 577px;
+.textarea {
+    height: 85%;
+}
+
+.input {
+    margin-top: 168px;
     border: none;
     color: #0A3871;
     padding: 2px;
     resize: none;
-    margin-top: 160px;
-    margin-left: 40px; 
     outline: none;
+    width: 100%;
 }
 
-.input::placeholder{ 
+.input::placeholder {
     color: #0A3871;
 }
 
-.info{
+.info {
     display: flex;
     align-items: center;
     gap: 8px;
-    height: 8px;
-    margin-left: 40px;
 }
 
-.info h6{
+.info h6 {
     color: #495057;
     font-size: 18px;
 }
 
-.buttons{
+.buttons {
+    height: 10%;
     display: flex;
-    margin-top: 26px;
-    margin-left: 40px;
+    float: bottom;
+    gap: 24px;
+    align-items: center;
 }
 
-.btn-encrypt{
+.btn-encrypt {
     background: #0A3871;
     border: 1px solid #0A3871;
     border-radius: 24px;
     color: white;
     cursor: pointer;
     height: 67px;
-    width: 328px;
+    width: 50%;
 }
 
-.btn-decrypt{
+.btn-decrypt {
     background: #D8DFE8;
     border: 1px solid #0A3871;
     border-radius: 24px;
     color: #0A3871;
     cursor: pointer;
     height: 67px;
-    width: 328px;
-    margin-left: 24px;
+    width: 50%;
 }
 
-footer{
-    margin-left: 80px;
-    margin-top: 32px;
-}
-
-.container{
-    height: 944px;
-    width: 400px;
+.output-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 120px);
     border: none;
     border-radius: 32px;
     background-color: white;
-    background-image: url("/Muñeco.png");
+    background-image: url("./src/Muñeco.png");
     background-repeat: no-repeat;
-    background-position: 50% 30%;
+    background-position: 50% 45%;
+    padding: 40px 40px 20px 40px;
+    margin: 40px 40px 40px 80px;
 }
 
-.output{
-    height: 805px;
-    width: 360px;
+.output {
+    width: 100%;
+    height: 85%;
     border: none;
     color: #0A3871;
     padding: 20px;
@@ -103,25 +105,77 @@ footer{
     outline: none;
 }
 
-.output::placeholder{
+.output::placeholder {
     color: black;
     font-family: Inter;
     font-size: 30px;
     font-weight: 700;
     text-align: center;
+    justify-self: center;
     position: relative;
-    top: 500px;
+    top: 80%;
 }
 
-.btn-copy{
+.button-footer{
+    background: white;
+}
+
+.btn-copy {
     background: white;
     border: 1px solid #0A3871;
     border-radius: 24px;
     color: #0A3871;
     cursor: pointer;
-    height: 67px;
-    width: 336px;
-    margin-left: 32px;
-    position: relative;
-    bottom: 82px;
+    width: 100%;
+    height: 68px;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-content: space-between;
+    }
+
+    .input-container{
+        padding: 20px;
+    }
+
+    .output-container {
+        background-image: none;
+        margin: 20px;
+    }
+    
+    .output::placeholder {
+        top: 50%;
+    }
+}
+
+@media (max-width: 375px) {
+    main {
+        flex-direction: column;
+        align-content: space-between;
+
+    }
+
+    .buttons{
+        flex-direction: column;
+    }
+
+    .btn-encrypt{
+        width: 100%;
+    }
+
+    .btn-decrypt{
+        width: 100%;
+    }
+    
+    .output-container {
+        background-image: none;
+        margin: 20px;
+    }
+
+    .output::placeholder {
+        font-size: 20px;
+        top: 50%;
+    }
 }
